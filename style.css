@@ -1,0 +1,327 @@
+
+      :root {
+        color-scheme: light dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        background-color: #0d1117;
+        color: #c9d1d9;
+      }
+
+      a {
+        color: #58a6ff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .application-main {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        background-color: #010409;
+        border-bottom: 1px solid #21262d;
+      }
+
+      .Header {
+        max-width: 1012px;
+        margin: 0 auto;
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .Header-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .Header-logo {
+        display: inline-flex;
+        align-items: center;
+        color: #f0f6fc;
+      }
+
+      .Header-logo svg {
+        fill: currentColor;
+      }
+
+      .Header-link {
+        color: #f0f6fc;
+        text-decoration: none;
+        font-weight: 600;
+        margin-right: 16px;
+        font-size: 14px;
+      }
+
+      .Header-link:last-child {
+        margin-right: 0;
+      }
+
+      .Header-link:hover {
+        text-decoration: underline;
+      }
+
+      main {
+        flex: 1 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px 40px;
+      }
+
+      .container-xl {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .Box {
+        background-color: #0d1117;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        box-shadow: 0 0 0 1px rgba(27,31,36,0.15);
+      }
+
+      .Box-header {
+        padding: 16px;
+        border-bottom: 1px solid #21262d;
+        text-align: center;
+      }
+
+      .Box-title {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .Box-subtitle {
+        font-size: 12px;
+        color: #8b949e;
+        margin-top: 4px;
+      }
+
+      .Box-body {
+        padding: 24px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .h2 {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .text-small {
+        font-size: 12px;
+      }
+
+      .text-muted {
+        color: #8b949e;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .mt-1 { margin-top: 4px; }
+      .mt-2 { margin-top: 8px; }
+      .mt-3 { margin-top: 16px; }
+      .mt-4 { margin-top: 24px; }
+
+      .d-flex {
+        display: flex;
+      }
+
+      .flex-items-center {
+        align-items: center;
+      }
+
+      .flex-justify-center {
+        justify-content: center;
+      }
+
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+
+      .gap-2 {
+        gap: 8px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 5px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 6px;
+        border: 1px solid rgba(240,246,252,0.1);
+        background-color: #21262d;
+        color: #f0f6fc;
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        background-color: #30363d;
+      }
+
+      .btn-primary {
+        background-color: #238636;
+        border-color: rgba(240,246,252,0.1);
+        color: #ffffff;
+        padding: 10px 32px;
+        font-size: 16px;
+      }
+
+      .btn-primary:hover {
+        background-color: #2ea043;
+      }
+
+      .Progress {
+        position: relative;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        background-color: #161b22;
+        border-radius: 6px;
+        height: 8px;
+      }
+
+      .Progress-item {
+        background-color: #2ea043;
+        width: 0%;
+        height: 100%;
+        transition: width 0.2s linear;
+      }
+
+      .note {
+        padding: 12px;
+        border-radius: 6px;
+        background-color: #161b22;
+        border: 1px solid #30363d;
+        font-size: 13px;
+        color: #c9d1d9;
+        text-align: center;
+      }
+
+      .redirect-message {
+        margin-top: 16px;
+        font-size: 14px;
+        color: #c9d1d9;
+        text-align: center;
+      }
+
+      .redirect-message strong {
+        font-weight: 600;
+      }
+
+      .verification-box {
+        background: linear-gradient(135deg, #1a472a 0%, #0d2818 100%);
+        border: 1px solid #2ea043;
+        border-radius: 6px;
+        padding: 20px;
+        margin-top: 16px;
+      }
+
+      .verification-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 600;
+        color: #3fb950;
+        margin-bottom: 16px;
+      }
+
+      .verification-title svg {
+        margin-right: 8px;
+        flex-shrink: 0;
+      }
+
+      .security-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .security-badge {
+        display: flex;
+        align-items: center;
+        background-color: rgba(46, 160, 67, 0.15);
+        border: 1px solid rgba(46, 160, 67, 0.3);
+        border-radius: 6px;
+        padding: 10px 16px;
+        font-size: 13px;
+        color: #c9d1d9;
+      }
+
+      .security-badge svg {
+        margin-right: 8px;
+        flex-shrink: 0;
+      }
+
+      .progress-section {
+        text-align: center;
+        margin-top: 16px;
+      }
+
+      .eta-display {
+        font-size: 18px;
+        font-weight: 600;
+        color: #c9d1d9;
+        margin-top: 8px;
+      }
+
+      footer {
+        border-top: 1px solid #21262d;
+        background-color: #010409;
+        color: #8b949e;
+        padding: 24px 16px;
+      }
+
+      .footer-container {
+        max-width: 1012px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .footer-links a {
+        color: #8b949e;
+        text-decoration: none;
+        margin-right: 12px;
+        font-size: 12px;
+      }
+
+      .footer-links a:last-child {
+        margin-right: 0;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }

